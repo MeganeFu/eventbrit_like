@@ -7,7 +7,8 @@ gem 'faker'
 
 gem 'dotenv-rails'
 gem 'table_print'
-gem 'devise'
+# pour créer des sessions
+gem 'devise', '~> 4.2'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
