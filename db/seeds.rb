@@ -30,7 +30,7 @@ p "database has now #{User.count} users"
 p "EVENT DeSTROY"
 
 5.times do 
-	Event.create!(start_date: Faker::Date.between(from: Date.today, to: 2.year.from_now), duration: Faker::Number.digit, title: Faker::TvShows::Friends.quote, description: Faker::TvShows::TwinPeaks.quote, price: Faker::Number.within(range: 1..200), location: Faker::Address.city, user_id: User.all.sample.id)
+	Event.create!(start_date: Faker::Date.between(from: Date.today, to: 2.year.from_now), duration: Faker::Number.within(range: 15...120), title: Faker::Space.planet + " " + "festival", description: Faker::TvShows::TwinPeaks.quote, price: Faker::Number.within(range: 1..200), location: Faker::Address.city, user_id: User.all.sample.id)
 	
 end 
 p "database has now #{Event.count} events"

@@ -15,10 +15,35 @@
  */
 h1 {
 	text-align: center;
+	text-decoration-color: beige;
 	
 }
 
 h2 {
 	
 	text-align: center;
+}
+
+.jumbotron h1 {
+
+color: blanchedalmond;
+opacity: 0.6 ;
+	}
+
+.jumbotron 
+{
+  /* Choisis la hauteur ici */
+  height: 600px;
+  
+
+  /* Tu lui donnes une image de background */
+  background-image: url("fiesta.jpg");
+
+  /* Centre l'image et la met bien sur tous les écrans */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+   padding: 20px;
+      
 }
