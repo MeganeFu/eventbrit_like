@@ -1,0 +1,23 @@
+<br><br><h1>Bienvenue sur la page de l'événement <%= @event.title%></h1><br>
+
+<div class="body-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5 border-blue">
+          <div class="card-body">
+    <p>Titre de l'événement: <%= @event.title%></p>
+<p>Description de l'événement: <%= @event.description%></p>
+<p>Lieu : <%= @event.location%></p>
+<p>Durée : <%= @event.duration%> min</p>
+<p>Prix : <%= @event.price%> euros</p>
+<p>Date : <%= @event.start_date%></p>
+<p>Son administrateur : <%= @event.user.first_name%></p>
+  </div>
+</div>
+</div>
+		</div>
+	</div>
+</div>
+
+<hr></hr>

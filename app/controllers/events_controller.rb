@@ -5,15 +5,9 @@ class EventsController < ApplicationController
 		@event = Event.new
 	end
 	
-	private
-  
-    def authenticate_user
-        unless current_user
-            flash.now[:alert] = "Email ou mot de passe invalide"
-            redirect_to new_user_session_path
-        end
-    end
-	
+	def show
+		@event = Event.find(params[:id])
+	end
 	
 	 def create
 		 
@@ -29,10 +23,19 @@ class EventsController < ApplicationController
 		
 		if @event.save
 			flash[:success] = "Tu as ajouter ton super potin."
-			redirect_to welcome_index_path
+			redirect_to root_path
 			
 		else render "new"
 
 	end
 	end
+	
+	   def authenticate_user
+        unless current_user
+            flash.now[:alert] = "Email ou mot de passe invalide"
+            redirect_to new_user_session_path
+        end
+    end
+	
 end
+

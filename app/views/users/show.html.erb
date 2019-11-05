@@ -1,9 +1,23 @@
-<br><br><h1>Bienvenue sur ta page <%= @user.first_name%></h1><br><br><hr></hr>
-<p>Ton prénom: <%= @user.first_name%></p>
+<br><br><h1>Bienvenue sur ta page <%= @user.first_name%></h1><br>
+
+<div class="body-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5 border-blue">
+          <div class="card-body">
+    <p>Ton prénom: <%= @user.first_name%></p>
 <p>Ton nom: <%= @user.last_name%></p>
 <p>Ton email : <%= @user.email%></p>
 <li class="nav-item"> <%= link_to "Modifie ton profil", edit_user_registration_path,   class:"nav-link" %> </li>
 <li class="nav-item"> <%= link_to "Complète ton profil", edit_user_path,   class:"nav-link" %> </li>
+  </div>
+</div>
+</div>
+		</div>
+	</div>
+</div>
+
 <hr></hr>
 
 <h2>Tes événements</h2>

@@ -2,10 +2,13 @@ class Event < ApplicationRecord
 	
 	validates :start_date, presence: true
   validate :future_event
+	
 private
   def future_event
-    errors.add(:start_date, "Can't be in the past!") if start_date < Date.today
+   if start_date.present? && start_date < Date.today
+      errors.add(:start_date, "can't be in the past")
   end
+	end
   
 	validates :duration, presence: true,  numericality: { only_integer: true, greater_than: 0 }
 	validates :title, presence: true, length: { in: 5..140 }
@@ -19,4 +22,5 @@ private
     EventMailer.event_email(self).deliver_now
   end
 end
+	
 
