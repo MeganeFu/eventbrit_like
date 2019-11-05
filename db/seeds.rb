@@ -21,7 +21,7 @@ p "USER DESTROY"
 
 5.times do |index|
 	  email = "email_#{index}@yopmail.com"
-    User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.famous_last_words,  encrypted_password: Faker::Creature::Animal.name, email: email)
+    User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.famous_last_words, password: Faker::Color.color_name(6...25), encrypted_password: @password, email: email)
 
 end
 p "database has now #{User.count} users"
