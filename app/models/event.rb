@@ -14,4 +14,10 @@ class Event < ApplicationRecord
 	validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 1000}
 	validates :location, presence: true
 	belongs_to :user
+	has_many :attendances
+	
+	 def event_send
+    EventMailer.event_email(self).deliver_now
+  end
 end
+
