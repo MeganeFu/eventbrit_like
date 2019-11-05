@@ -11,14 +11,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 	<header><nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand" href="#">Eventbrite-like</a>
+  <a class="navbar-brand text-info"<%= link_to "Eventbrite-like", root_path, class: "nav-item nav-link active" %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
-			<%= link_to "Events", new_event_path, class: "nav-item nav-link active" %>
+			<%= link_to "New Events", new_event_path, class: "nav-item nav-link active" %>
 	
 			<a class="navbar-nav ml-auto">
         <% if current_user %>
@@ -30,16 +30,12 @@
           <li class="nav-item"> <%= link_to "S'enregistrer", new_user_registration_path,   class:"nav-link" %> </li>
           <li class="nav-item"> <%= link_to "Se connecter", new_user_session_path, class:"nav-link" %> </li>
 				<% end %> </a>
-			
-    
-			
-	
-    
+			  
     </div>
   </div>
 </nav></header>
-
   <body>
+		
     <%= yield %>
   </body>
 </html>

@@ -1,9 +1,8 @@
 class CreateEvents < ActiveRecord::Migration[5.2]
   def change
     create_table :events do |t|
-			t.references :users, index: true
+			t.references :user, index: true
 			t.datetime :start_date
-			t.datetime :end_date 
 			t.integer :duration
 			t.string :title
 			t.text :description

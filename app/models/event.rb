@@ -1,13 +1,12 @@
 class Event < ApplicationRecord
 	
-	 validates :start_date, :presence => { :message => "must be a valid date/time" }
-  validates :end_date, :presence => {:message => "must be a valid date/time"}
-  validate :start_must_be_before_end_date
-
-  def start_must_be_before_end_date
-    errors.add(:start_date, "must be before end date") unless
-       start_date > end_date
-  end 
+	validates :start_date, presence: true
+  validate :future_event
+private
+  def future_event
+    errors.add(:start_date, "Can't be in the past!") if start_date < Date.today
+  end
+  
 	validates :duration, presence: true,  numericality: { only_integer: true, greater_than: 0 }
 	validates :title, presence: true, length: { in: 5..140 }
 	validates :description, presence: true, length: { in: 20..1000 }

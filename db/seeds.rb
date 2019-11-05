@@ -21,7 +21,18 @@ p "USER DESTROY"
 
 5.times do |index|
 	  email = "email_#{index}@yopmail.com"
-    User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.famous_last_words, password: Faker::Color.color_name(6...25), encrypted_password: @password, email: email)
+    User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Quote.famous_last_words, password: Faker::Cannabis.cannabinoid, email: email)
 
 end
 p "database has now #{User.count} users"
+
+
+p "EVENT DeSTROY"
+
+5.times do 
+	Event.create!(start_date: Faker::Date.between(from: Date.today, to: 2.year.from_now), duration: Faker::Number.digit, title: Faker::TvShows::Friends.quote, description: Faker::TvShows::TwinPeaks.quote, price: Faker::Number.within(range: 1..200), location: Faker::Address.city, user_id: User.all.sample.id)
+	
+end 
+p "database has now #{Event.count} events"
+	
+	
